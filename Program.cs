@@ -43,8 +43,17 @@
       Console.WriteLine("3. Tareas pendientes");
       Console.WriteLine("4. Salir");
 
-      string optionSelected = Console.ReadLine();
-      return Convert.ToInt32(optionSelected);
+      try
+      {
+        string optionSelected = Console.ReadLine();
+        return Convert.ToInt32(optionSelected);
+      }
+      catch (Exception)
+      {
+        Console.WriteLine("Opcion no valida");
+        return 4;
+      }
+      
     }
 
     public static void ShowMenuRemove()
